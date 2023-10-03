@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVI-UP-fLb">
+                                <rect key="frame" x="109.66666666666669" y="383.66666666666669" width="174" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Begin UIKit Capture"/>
+                                <connections>
+                                    <action selector="onTappedUIKitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sK7-9k-K4q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H63-cy-7fq">
+                                <rect key="frame" x="100.66666666666669" y="433.66666666666669" width="192" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Begin SwiftUI Capture"/>
+                                <connections>
+                                    <action selector="onTappedSwiftUIButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QSr-T6-qhU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H63-cy-7fq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="25" id="7qN-tz-bz7"/>
+                            <constraint firstItem="H63-cy-7fq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aHW-q6-AK0"/>
+                            <constraint firstItem="XVI-UP-fLb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="br7-Rw-6Is"/>
+                            <constraint firstItem="XVI-UP-fLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l8o-Jw-x7y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33" y="4"/>
+        </scene>
+        <!--Kit Camera View Controller-->
+        <scene sceneID="yxN-cC-RYT">
+            <objects>
+                <viewController storyboardIdentifier="UIKitCameraViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zMd-w2-swd" customClass="UIKitCameraViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kt5-zK-mmZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdU-pN-R91" userLabel="Preview">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnC-EC-p9K" userLabel="Viewfinder">
+                                <rect key="frame" x="96.666666666666686" y="326" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="3F0-tO-oIe"/>
+                                    <constraint firstAttribute="width" secondItem="pnC-EC-p9K" secondAttribute="height" multiplier="1:1" id="N0J-v9-mhX"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-Vq-atD" userLabel="Settings Stack View">
+                                <rect key="frame" x="335" y="84" width="42" height="94"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3H-tU-ph0">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="u3H-tU-ph0" secondAttribute="height" multiplier="1:1" id="KWX-jW-tbn"/>
+                                            <constraint firstAttribute="height" constant="42" id="Mc9-kK-hBi"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="flashlight.on.fill" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="flashlight.on.fill" catalog="system" cornerStyle="capsule"/>
+                                        <connections>
+                                            <action selector="onTappedTorchButton:" destination="zMd-w2-swd" eventType="touchUpInside" id="dWw-xo-7L6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHc-a6-Pyo" userLabel="Reset Button">
+                                        <rect key="frame" x="0.0" y="52" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="AHc-a6-Pyo" secondAttribute="height" multiplier="1:1" id="2gB-LY-rgq"/>
+                                            <constraint firstAttribute="height" constant="42" id="6KG-Vg-TDK"/>
+                                            <constraint firstAttribute="width" secondItem="AHc-a6-Pyo" secondAttribute="height" multiplier="1:1" id="djg-gK-B0D"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="flashlight.on.fill" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="arrow.clockwise" catalog="system" cornerStyle="capsule"/>
+                                        <connections>
+                                            <action selector="onTappedResetButton:" destination="zMd-w2-swd" eventType="touchUpInside" id="I9O-H8-f4f"/>
+                                            <action selector="onTappedResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ofN-C2-kP3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qJm-mG-eyq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qJm-mG-eyq" firstAttribute="trailing" secondItem="Ghk-Vq-atD" secondAttribute="trailing" constant="16" id="HCm-dg-8tc"/>
+                            <constraint firstItem="gdU-pN-R91" firstAttribute="trailing" secondItem="Kt5-zK-mmZ" secondAttribute="trailing" id="Idm-UA-ba0"/>
+                            <constraint firstItem="gdU-pN-R91" firstAttribute="leading" secondItem="Kt5-zK-mmZ" secondAttribute="leading" id="J0p-dW-eS3"/>
+                            <constraint firstItem="pnC-EC-p9K" firstAttribute="centerX" secondItem="Kt5-zK-mmZ" secondAttribute="centerX" id="SIm-aa-DLh"/>
+                            <constraint firstItem="pnC-EC-p9K" firstAttribute="centerY" secondItem="Kt5-zK-mmZ" secondAttribute="centerY" id="X03-0Y-PVI"/>
+                            <constraint firstItem="gdU-pN-R91" firstAttribute="top" secondItem="Kt5-zK-mmZ" secondAttribute="top" id="XH9-NI-w0A"/>
+                            <constraint firstAttribute="bottom" secondItem="gdU-pN-R91" secondAttribute="bottom" id="kNL-AU-DB0"/>
+                            <constraint firstItem="Ghk-Vq-atD" firstAttribute="top" secondItem="qJm-mG-eyq" secondAttribute="top" constant="25" id="wci-qp-9Jl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="gdU-pN-R91" id="hMD-tN-kw3"/>
+                        <outlet property="resetButton" destination="AHc-a6-Pyo" id="gQv-o6-B9l"/>
+                        <outlet property="torchButton" destination="u3H-tU-ph0" id="IMx-7c-mZE"/>
+                        <outlet property="viewfinder" destination="pnC-EC-p9K" id="AOE-CF-lDh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vwr-Hu-Mwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <image name="flashlight.on.fill" catalog="system" width="72" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
