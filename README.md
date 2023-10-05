@@ -14,7 +14,12 @@ A small but versatile QR scanning framework with sane defaults
 
 ### Cocoapods
 
-(TODO)
+platform :ios, '13.0'
+use_frameworks!
+
+target 'MyApp' do
+  pod 'Cicada', '~> 0.1.0'
+end
 
 ### Carthage
 
