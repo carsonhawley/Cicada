@@ -16,6 +16,7 @@
 		1FA93F902AA36DCB009391E8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA93F8F2AA36DCB009391E8 /* README.md */; };
 		1FA93F942AA41AF8009391E8 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA93F932AA41AF8009391E8 /* CaptureView.swift */; };
 		EC3B666E2ACBA1C2001BB9BA /* Cicada.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */; };
+		ECBB2E252ACF97C2004EC29C /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = ECBB2E242ACF97C2004EC29C /* fastlane */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		1FA93F8F2AA36DCB009391E8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FA93F932AA41AF8009391E8 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cicada.podspec; sourceTree = "<group>"; };
+		ECBB2E242ACF97C2004EC29C /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				1FA93F8F2AA36DCB009391E8 /* README.md */,
 				1F777B532A9F88CC00E6A4BD /* Cicada */,
 				1F777B5F2A9F88CD00E6A4BD /* CicadaTests */,
+				ECBB2E242ACF97C2004EC29C /* fastlane */,
 				EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */,
 				1F777B522A9F88CC00E6A4BD /* Products */,
 			);
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECBB2E252ACF97C2004EC29C /* fastlane in Resources */,
 				1FA93F902AA36DCB009391E8 /* README.md in Resources */,
 				EC3B666E2ACBA1C2001BB9BA /* Cicada.podspec in Resources */,
 			);
@@ -381,7 +385,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluebonsai.Cicada;
@@ -420,7 +424,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluebonsai.Cicada;

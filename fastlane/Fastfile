@@ -1,0 +1,59 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    ensure_git_status_clean
+  end
+
+  desc "Release a new version"
+  lane :create_release do |options|
+    ensure_git_branch
+
+    pod_lib_lint
+
+    bump_type = options[:bump_type]
+    new_version = bump_version(bump_type: bump_type)
+
+    commit_version_bump(
+      message: "Bump version to #{new_version}",
+      xcodeproj: 'Cicada.xcodeproj',
+      include: 'Cicada.podspec'
+    )
+    push_to_git_remote
+
+    add_git_tag(tag: new_version)
+    push_git_tags
+  end
+
+  desc "Increment the framework's version number without committing changes, returns new version"
+  lane :bump_version do |options|
+    bump_type = options[:bump_type]
+
+    increment_build_number(build_number: number_of_commits)
+    # bump without using agvtool https://github.com/fastlane/fastlane/issues/20132
+    increment_version_number_in_xcodeproj(bump_type: bump_type)
+
+    version_bump_podspec(path: "Cicada.podspec", bump_type: bump_type)
+
+    new_version = get_version_number
+    puts "Bumped version to " + new_version
+
+    new_version
+  end
+
+end
