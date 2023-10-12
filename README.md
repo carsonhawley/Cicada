@@ -1,6 +1,6 @@
 # Cicada
 
-A small but versatile QR scanning framework with sane defaults
+A tiny but versatile QR scanner written in Swift
 
 ![iOS Platform](https://img.shields.io/badge/iOS-13.0+-blue)
 ![Swift Language](https://img.shields.io/badge/Swift-5.0-orange)
@@ -8,22 +8,18 @@ A small but versatile QR scanning framework with sane defaults
 
 ## Installation
 
-### Swift Package Manager
-
-(TODO)
-
 ### Cocoapods
 
+Add the following package to your Podfile
+
+```ruby
 platform :ios, '13.0'
 use_frameworks!
 
 target 'MyApp' do
   pod 'Cicada', '~> 0.1.0'
 end
-
-### Carthage
-
-(TODO)
+```
 
 ## Quickstart
 
@@ -69,7 +65,7 @@ class ExampleViewController: UIViewController, CicadaCaptureDelegate {
 }
 ```
 
-Remember to include [NSCameraUsageDescription](https://developer.apple.com/documentation/avfoundation/capture_setup/requesting_authorization_to_capture_and_save_media) in your info.plist before attempting to access the camera. 
+Remember to include [NSCameraUsageDescription](https://developer.apple.com/documentation/avfoundation/capture_setup/requesting_authorization_to_capture_and_save_media) in your `info.plist` before attempting to access the camera. 
 
 Cicada supports several different capture behaviors
 - `.once` - Returns a single code. This is the default case.
@@ -132,9 +128,27 @@ override func layoutSubviews() {
 
 ## SwiftUI
 
-(TODO)
+Cicada also provides its own SwiftUI view
+
+```swift
+struct ExampleView: View {
+
+    var body: some View {
+        CaptureView(mode: .once) { result in
+            switch result {
+            case .success(let codes):
+                codes.forEach { result in
+                    print("Capture result: \(result.stringValue)")
+                }
+            case .failure(let error):
+                print("An error occured: \(error.localizedDescription)")
+            }
+        }
+    }
+}
+```
 
 ## License
 
-Cicada is available under the MIT license. See the LICENSE file for more info. 
+Cicada is available under the MIT license. See the [LICENSE](LICENSE.md) file for more info. 
 
