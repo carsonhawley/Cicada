@@ -15,6 +15,7 @@
 		1FA93F8A2A9FF92E009391E8 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA93F892A9FF92E009391E8 /* Capture.swift */; };
 		1FA93F902AA36DCB009391E8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA93F8F2AA36DCB009391E8 /* README.md */; };
 		1FA93F942AA41AF8009391E8 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA93F932AA41AF8009391E8 /* CaptureView.swift */; };
+		EC3B49012CD9C4550066F633 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B49002CD9C4520066F633 /* Haptics.swift */; };
 		EC3B666E2ACBA1C2001BB9BA /* Cicada.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */; };
 		ECBB2E252ACF97C2004EC29C /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = ECBB2E242ACF97C2004EC29C /* fastlane */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		1FA93F892A9FF92E009391E8 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
 		1FA93F8F2AA36DCB009391E8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FA93F932AA41AF8009391E8 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		EC3B49002CD9C4520066F633 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cicada.podspec; sourceTree = "<group>"; };
 		ECBB2E242ACF97C2004EC29C /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				1FA93F892A9FF92E009391E8 /* Capture.swift */,
 				1FA93F932AA41AF8009391E8 /* CaptureView.swift */,
 				1F17D2742AAD22AB00EE8C36 /* CaptureResult.swift */,
+				EC3B48FE2CD9C41E0066F633 /* Utilities */,
 			);
 			path = Cicada;
 			sourceTree = "<group>";
@@ -101,6 +104,14 @@
 				1F777B602A9F88CD00E6A4BD /* CicadaTests.swift */,
 			);
 			path = CicadaTests;
+			sourceTree = "<group>";
+		};
+		EC3B48FE2CD9C41E0066F633 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EC3B49002CD9C4520066F633 /* Haptics.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 			files = (
 				1FA93F8A2A9FF92E009391E8 /* Capture.swift in Sources */,
 				1F777B562A9F88CC00E6A4BD /* Cicada.docc in Sources */,
+				EC3B49012CD9C4550066F633 /* Haptics.swift in Sources */,
 				1FA93F942AA41AF8009391E8 /* CaptureView.swift in Sources */,
 				1F17D2752AAD22AB00EE8C36 /* CaptureResult.swift in Sources */,
 			);
