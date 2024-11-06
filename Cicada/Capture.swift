@@ -89,7 +89,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     private var capturePreviewLayer: AVCaptureVideoPreviewLayer?
     
     /// Types of metadata that may be returned
-    private let metadataObjectTypes: [AVMetadataObject.ObjectType]
+    public let metadataObjectTypes: [AVMetadataObject.ObjectType]
     
     /// Provides the parent layer to display the video preview
     private var previewView: UIView!
@@ -97,11 +97,14 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     /// Signals capture events using haptic device feedback
     private var hapticFeedbackGenerator: HapticFeedbackGenerator?
     
-    private var mode: Mode
+    /// The current operating mode of the camera instance
+    public private(set) var mode: Mode
     
-    private var autoShowTorch: Bool
+    /// Automatically turn on the flashlight when the capture session begins
+    public private(set) var autoShowTorch: Bool
     
-    private var hapticStyle: HapticStyle?
+    /// The current haptic feedback mode
+    public private(set) var hapticStyle: HapticStyle?
     
     private var discoveredCodes: [String] = []
     
@@ -148,7 +151,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         self.autoShowTorch = autoTorch
         self.hapticStyle = haptic
         
-        if let hapticStyle = hapticStyle {
+        if let hapticStyle {
             self.hapticFeedbackGenerator = HapticFeedbackGenerator(style: hapticStyle)
         }
     }
@@ -164,7 +167,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         session.beginConfiguration()
         
         do {
-            let deviceInput =  try AVCaptureDeviceInput(device: device)
+            let deviceInput = try AVCaptureDeviceInput(device: device)
             
             guard session.canAddInput(deviceInput) else {
                 throw CicadaError.invalidInput
@@ -292,7 +295,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
                 
                 didBeginCapture?()
                 
-                if let scanRect = scanRect {
+                if let scanRect {
                     self.captureMetadataOutput?.rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanRect)
                 }
                 
@@ -399,8 +402,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
             let stringValue = machineReadableObject.stringValue else {
             return nil
         }
-        if unique {
-            if discoveredCodes.contains(stringValue) { return nil }
+        if unique && !discoveredCodes.contains(stringValue)  {
             discoveredCodes.append(stringValue)
         }
         return CaptureResult(
@@ -410,7 +412,43 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         )
     }
     
-    // MARK: Interface Orientation - iOS 16 and lower
+    // MARK: Torch Mode
+    
+    /// Toggles device torch on or off
+    ///
+    /// You can only call this function after the capture session has begun. For any devices
+    /// that do not have a torch, or if the torch is temporarily unavailable, then this function 
+    /// does nothing
+    ///
+    /// - Parameter on: `true` if the torch should be activated
+    public func toggleTorch(on: Bool) {
+        guard let device = captureDevice else {
+            return
+        }
+        if device.hasTorch && device.isTorchAvailable {
+            do {
+                try device.lockForConfiguration()
+                
+                device.torchMode = on ? .on : .off
+                
+                device.unlockForConfiguration()
+            } catch {
+                // do nothing
+            }
+        }
+    }
+}
+
+internal extension Error {
+    
+    func cicadaError() -> CicadaError {
+        return self as? CicadaError ?? .unknownFailure(self.localizedDescription)
+    }
+}
+
+// MARK: Orientation - iOS 16 and lower
+
+extension Capture {
     
     private func addOrientationDidChangeObserver() {
         NotificationCenter.default
@@ -449,38 +487,5 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         default:
             return AVCaptureVideoOrientation.portrait
         }
-    }
-    
-    // MARK: Torch Mode
-    
-    /// Toggles device torch on or off
-    ///
-    /// You can only call this function after the capture session has begun. For any devices
-    /// that do not have a torch, or if the torch is temporarily unavailable, then this function 
-    /// does nothing
-    ///
-    /// - Parameter on: `true` if the torch should be activated
-    public func toggleTorch(on: Bool) {
-        guard let device = captureDevice else {
-            return
-        }
-        if device.hasTorch && device.isTorchAvailable {
-            do {
-                try device.lockForConfiguration()
-                
-                device.torchMode = on ? .on : .off
-                
-                device.unlockForConfiguration()
-            } catch {
-                // do nothing
-            }
-        }
-    }
-}
-
-internal extension Error {
-    
-    func cicadaError() -> CicadaError {
-        return self as? CicadaError ?? .unknownFailure(self.localizedDescription)
     }
 }
