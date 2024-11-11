@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 
 /// A cicada capture result
-public struct CaptureResult {
+public struct CaptureObject {
     
     /// Result data decoded as a string
     public private(set) var stringValue: String
@@ -22,4 +22,10 @@ public struct CaptureResult {
     
     /// Result data decoded as a url
     public lazy var urlValue: URL? = { URL(string: stringValue) }()
+    
+    internal init(stringValue: String, object: AVMetadataMachineReadableCodeObject) {
+        self.stringValue = stringValue
+        self.type = object.type
+        self.corners = object.corners
+    }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F17D2752AAD22AB00EE8C36 /* CaptureResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F17D2742AAD22AB00EE8C36 /* CaptureResult.swift */; };
+		1F17D2752AAD22AB00EE8C36 /* CaptureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F17D2742AAD22AB00EE8C36 /* CaptureObject.swift */; };
 		1F777B562A9F88CC00E6A4BD /* Cicada.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F777B552A9F88CC00E6A4BD /* Cicada.docc */; };
 		1F777B5C2A9F88CD00E6A4BD /* Cicada.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F777B512A9F88CC00E6A4BD /* Cicada.framework */; };
 		1F777B612A9F88CD00E6A4BD /* CicadaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F777B602A9F88CD00E6A4BD /* CicadaTests.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F17D2742AAD22AB00EE8C36 /* CaptureResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureResult.swift; sourceTree = "<group>"; };
+		1F17D2742AAD22AB00EE8C36 /* CaptureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureObject.swift; sourceTree = "<group>"; };
 		1F777B512A9F88CC00E6A4BD /* Cicada.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cicada.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F777B542A9F88CC00E6A4BD /* Cicada.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cicada.h; sourceTree = "<group>"; };
 		1F777B552A9F88CC00E6A4BD /* Cicada.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Cicada.docc; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				1F777B552A9F88CC00E6A4BD /* Cicada.docc */,
 				1FA93F892A9FF92E009391E8 /* Capture.swift */,
 				1FA93F932AA41AF8009391E8 /* CaptureView.swift */,
-				1F17D2742AAD22AB00EE8C36 /* CaptureResult.swift */,
+				1F17D2742AAD22AB00EE8C36 /* CaptureObject.swift */,
 				EC3B48FE2CD9C41E0066F633 /* Utilities */,
 			);
 			path = Cicada;
@@ -230,7 +230,7 @@
 				1F777B562A9F88CC00E6A4BD /* Cicada.docc in Sources */,
 				EC3B49012CD9C4550066F633 /* Haptics.swift in Sources */,
 				1FA93F942AA41AF8009391E8 /* CaptureView.swift in Sources */,
-				1F17D2752AAD22AB00EE8C36 /* CaptureResult.swift in Sources */,
+				1F17D2752AAD22AB00EE8C36 /* CaptureObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

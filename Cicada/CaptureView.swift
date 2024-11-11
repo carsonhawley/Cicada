@@ -11,17 +11,17 @@ import AVFoundation
 public struct CaptureView: UIViewControllerRepresentable {
     
     internal let metadataObjectTypes: [AVMetadataObject.ObjectType]
-    internal let mode: Capture.Mode
+    internal let mode: Mode
     internal let autoShowTorch: Bool
     internal let hapticStyle: HapticStyle?
-    internal let completion: (Result) -> Void
+    internal let completion: (Result<CaptureObject, CicadaError>) -> Void
     
     public init(
         types: [AVMetadataObject.ObjectType] = [.qr],
-        mode: Capture.Mode = .once,
+        mode: Mode = .once,
         autoTorch: Bool = false,
         haptic: HapticStyle? = nil,
-        completion: @escaping (Result) -> Void
+        completion: @escaping (Result<CaptureObject, CicadaError>) -> Void
     ) {
         self.metadataObjectTypes = types
         self.mode = mode
