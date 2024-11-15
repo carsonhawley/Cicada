@@ -12,10 +12,9 @@ struct SwiftUICaptureView: View {
     var body: some View {
         CaptureView(mode: .once) { result in
             switch result {
-            case .success(let codes):
-                codes.forEach { result in
-                    print("Capture result: \(result.stringValue)")
-                }
+            case .success(let code):
+                print("Capture result: \(code.stringValue)")
+                
             case .failure(let error):
                 print("An error occured: \(error.localizedDescription)")
             }
