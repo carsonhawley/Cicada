@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cicada"
-  spec.version      = "0.1.0"
+  spec.version      = "0.2.0"
   spec.summary      = "A tiny but versatile QR scanner written in Swift"
   spec.description  = <<-DESC
                     Cicada is lightweight, drop-in solution for QR or barcode scanning on iOS. Available
