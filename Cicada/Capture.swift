@@ -276,7 +276,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         previewLayer.frame = previewView.layer.bounds
         
         capturePreviewLayer = previewLayer
-        previewView.layer.addSublayer(capturePreviewLayer!)
+        previewView.layer.insertSublayer(capturePreviewLayer!, at: 0)
         
         addOrientationDidChangeObserver()
         
@@ -308,6 +308,8 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     /// Stops scanning for codes
     ///
     public func stop() {
+        capturePreviewLayer?.removeFromSuperlayer()
+        
         // prevent crash when calling stop before start
         if captureSession?.isRunning == true {
             DispatchQueue.global(qos: .userInitiated).async { [self] in
