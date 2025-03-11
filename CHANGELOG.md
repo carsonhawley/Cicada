@@ -18,3 +18,9 @@ Initial release. Cicada emerges.
 #### Fixed
 - Removed the time interval check for '.uniqueOnce' mode as this had the potential to drop codes.
 - Fixed the scan frame in the demo project.
+
+## [0.2.1](https://github.com/carsonhawley/Cicada/releases/tag/0.2.1) (2025-03-11)
+
+#### Fixed
+- insert video preview layer below all other views.
+- clear stale video frames on stop().
