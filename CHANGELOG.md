@@ -34,3 +34,8 @@ Initial release. Cicada emerges.
 - CaptureDelegate captureDidReceive() was not being called.
 - Incorrect return type for CaptureDelegate scanArea().
 - Performance issues.
+
+## [0.3.1](https://github.com/carsonhawley/Cicada/releases/tag/0.3.1) (2025-10-15)
+
+#### Fixed
+- Auto-exposure frame jitter during startup
