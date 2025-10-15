@@ -16,7 +16,7 @@ public protocol CaptureDelegate {
     func capture(_ capture: Capture, didReceive result: Result<CaptureObject, CicadaError>)
     
     /// Defines the area of the preview view where codes are detected
-    func scanArea(in capture: Capture) -> CGRect
+    func scanArea(in capture: Capture) -> CGRect?
 }
 
 /// Represents all errors returned by the framework
@@ -139,16 +139,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     private var responseEmitter: ResponseEmitter!
     
     /// An object that acts as the delegate for the capture session
-    public var delegate: CaptureDelegate? = nil {
-        didSet {
-            responseHandler = { result in
-                self.delegate?.capture(self, didReceive: result)
-            }
-            scanArea = {
-                return self.delegate?.scanArea(in: self)
-            }
-        }
-    }
+    public var delegate: CaptureDelegate? = nil
     
     /// Internal response completion block
     private var responseHandler: ((Result<CaptureObject, CicadaError>) -> Void)? = nil
@@ -272,7 +263,10 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     ///   - preview: The view to attach the live camera preview layer to
     ///   - completion: The completion block for the capture result
     public func start(preview: UIView, completion: ((Result<CaptureObject, CicadaError>) -> Void)? = nil) {
-        self.responseHandler = completion
+        self.responseHandler = { [self] result in
+            completion?(result)
+            delegate?.capture(self, didReceive: result)
+        }
         
         preview.backgroundColor = .black // implement custom gradient?
         
@@ -315,7 +309,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         
         addOrientationDidChangeObserver()
         
-        let scanRect = self.scanArea?()
+        let scanRect = self.scanArea?() ?? self.delegate?.scanArea(in: self)
         
         if mode != .continuous {
             hapticFeedbackGenerator?.prepare()
