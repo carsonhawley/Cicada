@@ -107,6 +107,19 @@ HapticStyle.double
 
 All haptic feedback styles are ignored for `.continuous` mode
 
+### Capture Preview Dim Strength
+
+Dims the capture session preview after a code is scanned. 
+
+```
+DimStrength.light
+DimStrength.medium
+DimStrength.heavy
+DimStrength.custom(Float)
+```
+
+DimStrength only applies to `.once` mode.
+
 ### Camera Orientation
 
 If your app supports multiple orientations, then you must update the capture preview to reflect those changes:

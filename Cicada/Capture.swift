@@ -53,6 +53,32 @@ public enum Mode {
     case onceUnique
 }
 
+/// Represents the preview dim strength on capture
+public enum DimStrength {
+    
+    case light
+    
+    case medium
+    
+    case heavy
+    
+    /// Custom dim strength, accepts any value from 0 to 1
+    case custom(Float)
+    
+    internal func getOpacityValue() -> Float {
+        switch self {
+        case .light:
+            return 0.6
+        case .medium:
+            return 0.4
+        case .heavy:
+            return 0.2
+        case .custom(let value):
+            return 1 - value
+        }
+    }
+}
+
 /// The core capture class that interacts with the underlying AVFoundation libraries
 @available(iOS 13.0, *)
 public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
@@ -99,6 +125,9 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     /// The current haptic feedback mode
     public private(set) var hapticStyle: HapticStyle?
     
+    /// The current dim strength after scanning
+    public private(set) var dimStrength: DimStrength?
+    
     private var discoveredCodes: [String] = []
     
     private var responseTimeInterval = 0.2
@@ -137,12 +166,14 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         types: [AVMetadataObject.ObjectType],
         mode: Mode = .once,
         autoTorch: Bool = false,
-        haptic: HapticStyle? = nil
+        haptic: HapticStyle? = nil,
+        dimStrength: DimStrength? = nil
     ) {
         self.metadataObjectTypes = types
         self.mode = mode
         self.autoShowTorch = autoTorch
         self.hapticStyle = haptic
+        self.dimStrength = dimStrength
         
         if let hapticStyle {
             self.hapticFeedbackGenerator = HapticFeedbackGenerator(style: hapticStyle)
@@ -330,6 +361,8 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     public func restart() {
         lastCaptureDate = nil
         discoveredCodes = []
+        
+        capturePreviewLayer?.opacity = 1.0
     }
     
     /// Returns a result emitter block for the capture mode
@@ -350,6 +383,10 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
                 responseHandler?(.success(captureObject))
                 
                 hapticFeedbackGenerator?.feedbackOccured()
+                
+                if let dimStrength {
+                    capturePreviewLayer?.opacity = dimStrength.getOpacityValue()
+                }
             }
             
         case .onceUnique:
