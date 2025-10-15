@@ -303,6 +303,7 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         previewLayer.videoGravity = .resizeAspectFill
         previewLayer.frame = previewView.layer.bounds
+        previewLayer.opacity = 0.0
         
         capturePreviewLayer = previewLayer
         previewView.layer.insertSublayer(capturePreviewLayer!, at: 0)
@@ -319,6 +320,12 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
             DispatchQueue.global(qos: .userInteractive).async { [self] in
                 captureSession!.startRunning()
                 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    CATransaction.begin()
+                    CATransaction.setAnimationDuration(0.25)
+                    previewLayer.opacity = 1.0
+                    CATransaction.commit()
+                }
                 didBeginCapture?()
                 
                 if let scanRect {
