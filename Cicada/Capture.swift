@@ -116,6 +116,8 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     /// Signals capture events using haptic device feedback
     private var hapticFeedbackGenerator: HapticFeedbackGenerator?
     
+    private var sessionQueue: DispatchQueue
+    
     /// The current operating mode of the camera instance
     public private(set) var mode: Mode
     
@@ -178,6 +180,8 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         if let hapticStyle {
             self.hapticFeedbackGenerator = HapticFeedbackGenerator(style: hapticStyle)
         }
+        
+        sessionQueue = DispatchQueue(label: "com.cicada.sessionQueue")
     }
     
     /// Ensures device output can produce the requested metadata types
@@ -337,19 +341,26 @@ public class Capture: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     /// Stops scanning for codes
-    ///
     public func stop() {
         capturePreviewLayer?.removeFromSuperlayer()
+        capturePreviewLayer?.session = nil
+        capturePreviewLayer = nil
         
-        // prevent crash when calling stop before start
-        if captureSession?.isRunning == true {
-            DispatchQueue.global(qos: .userInitiated).async { [self] in
-                captureSession?.stopRunning()
-                toggleTorch(on: false)
+        if let session = self.captureSession {
+            if session.isRunning {
+                sessionQueue.async {
+                    session.outputs.forEach {
+                        session.removeOutput($0)
+                    }
+                    session.stopRunning()
+                }
+            } else {
+                print("Capture is already stopped")
             }
-        } else {
-            print("Capture is already stopped")
+            captureSession = nil
         }
+        toggleTorch(on: false)
+        
         removeOrientationDidChangeObserver()
     }
     
