@@ -24,3 +24,13 @@ Initial release. Cicada emerges.
 #### Fixed
 - insert video preview layer below all other views.
 - clear stale video frames on stop().
+
+## [0.3.0](https://github.com/carsonhawley/Cicada/releases/tag/0.3.0) (2025-10-15)
+
+#### Added
+- Feature: optionally dim capture preview after code is scanned, .once mode only.
+
+#### Fixed
+- CaptureDelegate captureDidReceive() was not being called.
+- Incorrect return type for CaptureDelegate scanArea().
+- Performance issues.
