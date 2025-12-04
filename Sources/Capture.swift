@@ -5,6 +5,7 @@
 //  Created by Carson Hawley on 8/30/23.
 //
 
+#if os(iOS)
 import UIKit
 import Foundation
 import AVFoundation
@@ -532,3 +533,4 @@ extension Capture {
         }
     }
 }
+#endif

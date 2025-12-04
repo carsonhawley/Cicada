@@ -5,6 +5,7 @@
 //  Created by Blue Bonsai on 11/4/24.
 //
 
+#if os(iOS)
 import UIKit
 
 /// Represents different types of device haptic styles when playing a vibration
@@ -55,3 +56,4 @@ internal class HapticFeedbackGenerator: NSObject {
         }
     }
 }
+#endif

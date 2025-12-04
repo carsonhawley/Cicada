@@ -5,6 +5,7 @@
 //  Created by Carson Hawley on 9/2/23.
 //
 
+#if os(iOS)
 import SwiftUI
 import AVFoundation
 
@@ -89,3 +90,4 @@ public class CaptureViewController: UIViewController {
         capture.stop()
     }
 }
+#endif

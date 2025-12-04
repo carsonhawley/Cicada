@@ -7,17 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F17D2752AAD22AB00EE8C36 /* CaptureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F17D2742AAD22AB00EE8C36 /* CaptureObject.swift */; };
-		1F777B562A9F88CC00E6A4BD /* Cicada.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1F777B552A9F88CC00E6A4BD /* Cicada.docc */; };
 		1F777B5C2A9F88CD00E6A4BD /* Cicada.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F777B512A9F88CC00E6A4BD /* Cicada.framework */; };
-		1F777B612A9F88CD00E6A4BD /* CicadaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F777B602A9F88CD00E6A4BD /* CicadaTests.swift */; };
-		1F777B622A9F88CD00E6A4BD /* Cicada.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F777B542A9F88CC00E6A4BD /* Cicada.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FA93F8A2A9FF92E009391E8 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA93F892A9FF92E009391E8 /* Capture.swift */; };
-		1FA93F902AA36DCB009391E8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA93F8F2AA36DCB009391E8 /* README.md */; };
-		1FA93F942AA41AF8009391E8 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA93F932AA41AF8009391E8 /* CaptureView.swift */; };
-		EC3B49012CD9C4550066F633 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B49002CD9C4520066F633 /* Haptics.swift */; };
-		EC3B666E2ACBA1C2001BB9BA /* Cicada.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */; };
-		ECBB2E252ACF97C2004EC29C /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = ECBB2E242ACF97C2004EC29C /* fastlane */; };
+		EC5E48572EE1FCC200026B33 /* CicadaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3FEE62EE1EB2D00A3836C /* CicadaTests.swift */; };
+		ECF3F52A2EE1EA7F00A3836C /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3F5222EE1EA7F00A3836C /* Haptics.swift */; };
+		ECF3F52B2EE1EA7F00A3836C /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3F5242EE1EA7F00A3836C /* Capture.swift */; };
+		ECF3F52C2EE1EA7F00A3836C /* Cicada.docc in Sources */ = {isa = PBXBuildFile; fileRef = ECF3F5282EE1EA7F00A3836C /* Cicada.docc */; };
+		ECF3F52E2EE1EA7F00A3836C /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3F5262EE1EA7F00A3836C /* CaptureView.swift */; };
+		ECF3F52F2EE1EA7F00A3836C /* CaptureObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3F5252EE1EA7F00A3836C /* CaptureObject.swift */; };
+		ECF3F5302EE1EA7F00A3836C /* Cicada.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF3F5272EE1EA7F00A3836C /* Cicada.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,18 +28,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F17D2742AAD22AB00EE8C36 /* CaptureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureObject.swift; sourceTree = "<group>"; };
 		1F777B512A9F88CC00E6A4BD /* Cicada.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cicada.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F777B542A9F88CC00E6A4BD /* Cicada.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cicada.h; sourceTree = "<group>"; };
-		1F777B552A9F88CC00E6A4BD /* Cicada.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Cicada.docc; sourceTree = "<group>"; };
 		1F777B5B2A9F88CD00E6A4BD /* CicadaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CicadaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F777B602A9F88CD00E6A4BD /* CicadaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicadaTests.swift; sourceTree = "<group>"; };
-		1FA93F892A9FF92E009391E8 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
-		1FA93F8F2AA36DCB009391E8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1FA93F932AA41AF8009391E8 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
-		EC3B49002CD9C4520066F633 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
-		EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cicada.podspec; sourceTree = "<group>"; };
-		ECBB2E242ACF97C2004EC29C /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		ECF3F5222EE1EA7F00A3836C /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		ECF3F5242EE1EA7F00A3836C /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
+		ECF3F5252EE1EA7F00A3836C /* CaptureObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureObject.swift; sourceTree = "<group>"; };
+		ECF3F5262EE1EA7F00A3836C /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		ECF3F5272EE1EA7F00A3836C /* Cicada.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cicada.h; sourceTree = "<group>"; };
+		ECF3F5282EE1EA7F00A3836C /* Cicada.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Cicada.docc; sourceTree = "<group>"; };
+		ECF3FEE62EE1EB2D00A3836C /* CicadaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicadaTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +61,8 @@
 		1F777B472A9F88CC00E6A4BD = {
 			isa = PBXGroup;
 			children = (
-				1FA93F8F2AA36DCB009391E8 /* README.md */,
-				1F777B532A9F88CC00E6A4BD /* Cicada */,
-				1F777B5F2A9F88CD00E6A4BD /* CicadaTests */,
-				ECBB2E242ACF97C2004EC29C /* fastlane */,
-				EC3B666D2ACBA1C2001BB9BA /* Cicada.podspec */,
+				ECF3F5292EE1EA7F00A3836C /* Sources */,
+				ECF3FEE82EE1EB2D00A3836C /* Tests */,
 				1F777B522A9F88CC00E6A4BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,33 +76,41 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1F777B532A9F88CC00E6A4BD /* Cicada */ = {
+		ECF3F5232EE1EA7F00A3836C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1F777B542A9F88CC00E6A4BD /* Cicada.h */,
-				1F777B552A9F88CC00E6A4BD /* Cicada.docc */,
-				1FA93F892A9FF92E009391E8 /* Capture.swift */,
-				1FA93F932AA41AF8009391E8 /* CaptureView.swift */,
-				1F17D2742AAD22AB00EE8C36 /* CaptureObject.swift */,
-				EC3B48FE2CD9C41E0066F633 /* Utilities */,
+				ECF3F5222EE1EA7F00A3836C /* Haptics.swift */,
 			);
-			path = Cicada;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
-		1F777B5F2A9F88CD00E6A4BD /* CicadaTests */ = {
+		ECF3F5292EE1EA7F00A3836C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1F777B602A9F88CD00E6A4BD /* CicadaTests.swift */,
+				ECF3F5232EE1EA7F00A3836C /* Utilities */,
+				ECF3F5242EE1EA7F00A3836C /* Capture.swift */,
+				ECF3F5252EE1EA7F00A3836C /* CaptureObject.swift */,
+				ECF3F5262EE1EA7F00A3836C /* CaptureView.swift */,
+				ECF3F5272EE1EA7F00A3836C /* Cicada.h */,
+				ECF3F5282EE1EA7F00A3836C /* Cicada.docc */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		ECF3FEE72EE1EB2D00A3836C /* CicadaTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3FEE62EE1EB2D00A3836C /* CicadaTests.swift */,
 			);
 			path = CicadaTests;
 			sourceTree = "<group>";
 		};
-		EC3B48FE2CD9C41E0066F633 /* Utilities */ = {
+		ECF3FEE82EE1EB2D00A3836C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EC3B49002CD9C4520066F633 /* Haptics.swift */,
+				ECF3FEE72EE1EB2D00A3836C /* CicadaTests */,
 			);
-			path = Utilities;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,7 +120,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F777B622A9F88CD00E6A4BD /* Cicada.h in Headers */,
+				ECF3F5302EE1EA7F00A3836C /* Cicada.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECBB2E252ACF97C2004EC29C /* fastlane in Resources */,
-				1FA93F902AA36DCB009391E8 /* README.md in Resources */,
-				EC3B666E2ACBA1C2001BB9BA /* Cicada.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,11 +222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA93F8A2A9FF92E009391E8 /* Capture.swift in Sources */,
-				1F777B562A9F88CC00E6A4BD /* Cicada.docc in Sources */,
-				EC3B49012CD9C4550066F633 /* Haptics.swift in Sources */,
-				1FA93F942AA41AF8009391E8 /* CaptureView.swift in Sources */,
-				1F17D2752AAD22AB00EE8C36 /* CaptureObject.swift in Sources */,
+				ECF3F52A2EE1EA7F00A3836C /* Haptics.swift in Sources */,
+				ECF3F52B2EE1EA7F00A3836C /* Capture.swift in Sources */,
+				ECF3F52C2EE1EA7F00A3836C /* Cicada.docc in Sources */,
+				ECF3F52E2EE1EA7F00A3836C /* CaptureView.swift in Sources */,
+				ECF3F52F2EE1EA7F00A3836C /* CaptureObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F777B612A9F88CD00E6A4BD /* CicadaTests.swift in Sources */,
+				EC5E48572EE1FCC200026B33 /* CicadaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +454,6 @@
 		1F777B692A9F88CD00E6A4BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4UBE68TDZT;
@@ -480,7 +475,6 @@
 		1F777B6A2A9F88CD00E6A4BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4UBE68TDZT;
