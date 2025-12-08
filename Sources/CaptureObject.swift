@@ -5,6 +5,7 @@
 //  Created by Carson Hawley on 9/9/23.
 //
 
+#if os(iOS)
 import Foundation
 import AVFoundation
 
@@ -29,3 +30,4 @@ public struct CaptureObject {
         self.corners = object.corners
     }
 }
+#endif
